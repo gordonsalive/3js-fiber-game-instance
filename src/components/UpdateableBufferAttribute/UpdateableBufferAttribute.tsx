@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 interface UpdateableBufferAttributeProps {
-    attachObject: [target: string, name: string];
+    attachObject: string;//[target: string, name: string];
     array: Float32Array;
     count: number;
     itemSize: number;
@@ -19,7 +19,8 @@ const UpdateableBufferAttribute: React.FunctionComponent<UpdateableBufferAttribu
     count,
     itemSize
 }: UpdateableBufferAttributeProps) => {
-    const ref = useRef<THREE.BufferAttribute>();
+    // const ref = useRef<THREE.BufferAttribute>();
+    const ref = useRef<THREE.BufferAttribute>() as React.MutableRefObject<THREE.BufferAttribute | null>;
 
     useEffect(() => {
         if (ref.current) {
@@ -29,7 +30,7 @@ const UpdateableBufferAttribute: React.FunctionComponent<UpdateableBufferAttribu
 
     return (
         <bufferAttribute
-            attachObject={attachObject}
+            attach={attachObject}
             array={array}
             itemSize={itemSize}
             count={count}

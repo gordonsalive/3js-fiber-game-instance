@@ -71,11 +71,11 @@ export default function Floor() {
         <instancedMesh
             ref={ref}
             args={[undefined, undefined, floorTiles.floorTiles.length]}
-            onPointerDown={(e) => console.log('down', e.point.x, '-', e.point.z)}
-            onPointerMove={(e) => console.log('move', e.point.x, '-', e.point.z)}
+            // onPointerDown={(e) => console.log('down', e.point.x, '-', e.point.z)}
+            // onPointerMove={(e) => console.log('move', e.point.x, '-', e.point.z)}
             >
             <planeBufferGeometry args={[cellWidth, cellHeight]} >
-                <instancedBufferAttribute attachObject={['attributes', 'color']} args={[colorArray, 3]} />
+                <instancedBufferAttribute attach="attributes-color" args={[colorArray, 3]} />
             </planeBufferGeometry>
             {/* <boxBufferGeometry args={[cellWidth, 0.05, cellHeight]}>
                 <instancedBufferAttribute attachObject={['attributes', 'color']} args={[colorArray, 3]} />

@@ -23,7 +23,7 @@ const getMaterial = (isChameleon: boolean | undefined, textures: Texture[] | und
     if (isChameleon) {
         return (<meshNormalMaterial attach='material' />);
     } else if (textures) {
-        return textures.map((texture, i) => <meshBasicMaterial attachArray="material" map={texture} key={'BufferedBox_MaterialTexture'+i} />);
+        return textures.map((texture, i) => <meshBasicMaterial attach="material" map={texture} key={'BufferedBox_MaterialTexture'+i} />);
     } else {
         return (<meshLambertMaterial attach='material' color={colour} />);
     }
